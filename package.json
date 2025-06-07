@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
+    "start:prod": "npm run init-db && node app.js",
     "dev": "nodemon app.js",
     "init-db": "node init-db.js"
   },
@@ -20,5 +21,8 @@
   },
   "keywords": ["remote-config", "nodejs", "postgresql"],
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "engines": {
+    "node": "18.x"
+  }
 } 

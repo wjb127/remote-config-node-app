@@ -4,7 +4,7 @@ const pool = require('./database');
 require('dotenv').config();
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 // 미들웨어
 app.use(cors());
@@ -134,8 +134,8 @@ app.delete('/api/configs/:key', async (req, res) => {
 });
 
 // 서버 시작
-app.listen(PORT, () => {
-  console.log(`서버가 http://localhost:${PORT} 에서 실행 중입니다.`);
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`서버가 http://0.0.0.0:${PORT} 에서 실행 중입니다.`);
 });
 
 module.exports = app; 

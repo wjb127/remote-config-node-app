@@ -1,0 +1,16 @@
+services:
+  - type: pserv
+    name: remote-config-db
+    databaseName: remote_config
+    user: postgres
+    plan: free
+
+  - type: web
+    name: remote-config-api
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm run start:prod
+    envVars:
+      - key: NODE_ENV
+        value: production 
